@@ -14,6 +14,3 @@ function convertToFarengheit(){
     alert(`${temperature}\xB0C это ${convTMPR}\xB0F`);
     return convTMPR;
 }
-
-//convertToFarengheit()
-//<script src="1.js"></script>
