@@ -16,4 +16,4 @@ INSERT INTO students VALUES (8, "Антон", 32, "Москва");
 INSERT INTO students VALUES (9, "Валерий", 37, "Санкт-Петербург");
 INSERT INTO students VALUES (10, "Александра", 21, "Москва");
 
-SELECT * FROM students WHERE address="Москва" AND age >= 18 AND age < 30;
+SELECT name FROM students WHERE address="Москва" AND age >= 18 AND age < 30;
