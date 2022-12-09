@@ -7,11 +7,31 @@ $newApplicant = [
         "email" => "sky_ark@gmail.com",
         "phoneNumber" => "+7(956)758-45-85",
     ],
-    "workingplaces" => [
-        "occupations" => ['Frontend-developer','Жонглер кошками', 'DevOps', 'Преподаватель инофрматики',],
-        "startDates" => ['Декабрь 2015', 'Сентябрь 2015', 'Июль 2010', 'Август 2000',],
-        "endDates" => ['Настоящее время','Ноябрь 2015', 'Август 2015','Июнь 2010',],
-        "descriptions" => ['Нашел свое призвание', 'После devOps очень даже просто оказалось','Всем не нравился, бесили, ругались','Всем нравился, хвалили',],
+    "experience" => [
+      [
+        "occupation" => "Frontend-developer",
+        "startDate" => "Декабрь 2015", 
+        "endDate" => "Настоящее время",        
+        "description" => "Нашел свое призвание",
+      ],
+      [
+        "occupation" => "Жонглер кошками",
+        "startDate" => "Сентябрь 2015", 
+        "endDate" => "Ноябрь 2015",        
+        "description" => "После devOps очень даже просто оказалось",
+      ],
+      [
+        "occupation" => "DevOps",
+        "startDate" => "Июль 2010", 
+        "endDate" => "Август 2015",        
+        "description" => "Всем не нравился, бесили, ругались",
+      ],
+      [
+        "occupation" => "Преподаватель инофрматики",
+        "startDate" => "Август 2000", 
+        "endDate" => "Июнь 2010",        
+        "description" => "Всем нравился, хвалили",
+      ],
     ],
 ]
 ?>
@@ -106,20 +126,20 @@ $newApplicant = [
         <div class="w3-container w3-card w3-white w3-margin-bottom">
           <h2 class="w3-text-grey w3-padding-16"><i
               class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Опыт работы</h2>
-         <?php for($i = 0; $i<count($newApplicant["workingplaces"]["occupations"]); $i++): ?>
+         <?php for($i = 0; $i<count($newApplicant["experience"]); $i++): ?>
                 <div class="w3-container">
-                    <h5 class="w3-opacity"><b><?php echo $newApplicant["workingplaces"]["occupations"][$i]?></b></h5>
+                    <h5 class="w3-opacity"><b><?php echo $newApplicant["experience"][$i]["occupation"]?></b></h5>
                     <h6 class="w3-text-teal">
-                        <i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $newApplicant["workingplaces"]["startDates"][$i]?></i> - 
+                        <i class="fa fa-calendar fa-fw w3-margin-right"></i><?php echo $newApplicant["experience"][$i]["startDate"]?></i> - 
                         <?php if($i==0):?>
                             <span class="w3-tag w3-teal w3-round">
-                                <?php echo $newApplicant["workingplaces"]["endDates"][$i]?>
+                                <?php echo $newApplicant["experience"][$i]["endDate"]?>
                             </span>
                         <?php else:?>
-                            <<?php echo $newApplicant["workingplaces"]["endDates"][$i]?>
+                            <?php echo $newApplicant["experience"][$i]["endDate"]?>
                         <?php endif;?>
                     </h6>
-                    <p><?php echo $newApplicant["workingplaces"]["descriptions"][$i]?></p>
+                    <p><?php echo $newApplicant["experience"][$i]["description"]?></p>
                     <hr>
                 </div>
         <?php endfor; ?> 
